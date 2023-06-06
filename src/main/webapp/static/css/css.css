@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tupian {
+    position: relative;
+    left: 184px
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    width: 1150px;
+    margin: auto;
+}
+
+
+/*整个页面有一个颜色*/
+
+body {
+    background-color: aquamarine
+}
+
+.header {
+    position: sticky;
+    top: 0px;
+    height: 42px;
+    /*在这里会有一个层叠问题 这里的margin会层叠w里面的margin*/
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    height: 42px;
+    width: 198px;
+    background: url(../img/学成在线.png);
+}
+
+li {
+    /*去除无序列表中的小点*/
+    list-style: none;
+}
+
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 30px;
+}
+
+.nav ul li a {
+    display: block;
+    height: 42px;
+    /*
+    对于不同文字宽度不同 不好指定宽度
+    这是我们可以使用padding 自动撑开
+    只需指定这个a距离上下多少 和每个盒子之间相隔多少像素
+    如下面是指相隔10px 每个文字之间
+    
+    对于a是行内元素 是没有宽度和高度的
+    给了宽度高度是不起作用的 那么怎么办
+    利用display：block将行内元素转换出块级元素
+    */
+    padding: 0 10px;
+    /*
+    line-height 指的是在42px指定高度中 居中
+    */
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+
+/*
+hover是经过的意思 
+当鼠标经过a的时候 
+会显示出大括号里面的内容
+
+*/
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #8398a3;
+    text-decoration: none;
+}
+
+
+/*搜索框*/
+
+.search {
+    float: left;
+    height: 42px;
+    width: 412px;
+    background-color: darkgreen;
+    margin-left: 50px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid skyblue;
+    border-right: 0;
+    color: #bfbfbf;
+    font-size: 14px;
+    /*这里为什么不能用margin-left？
+    由于margin-left应用的对象时块级元素
+    指的是input这个文本框  如果使用这个文本框会往右移
+    对于padding应用的是文字
+    但是会撑大盒子
+    */
+    padding-left: 15px;
+    /*
+    注意这里由于边框有宽度，这里的高度需要减掉2px
+    */
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    /*对于按钮它默认是有边框的，需要我们手动去掉*/
+    border: 0;
+    background: url(../img/btn.png);
+    /*
+   可以给按钮添加背景图片
+   background:url(ima////)
+   */
+}
+
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.user a {
+    margin-left: 20px;
+}
+
+.user a:hover {
+    text-decoration: none;
+}
+
+
+/*第二大部分*/
+
+.banner {
+    height: 421px;
+    background-color: #415d46;
+}
+
+.banner .w {
+    height: 421px;
+    /*选择图片插入*/
+    background: url(../img/banner3.png) no-repeat top center;
+}
+
+.ull {
+    float: left;
+    width: 190px;
+    height: 421px;
+    /*半透明实现方法*/
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.ull ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+
+.ull ul li a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.ull ul li a span {
+    float: right;
+}
+
+.ull ul li a:hover {
+    color: #00a4ff;
+}
+
+.course {
+    width: 230px;
+    height: 300px;
+    float: right;
+    background-color: #00a4ff;
+    /*浮动的盒子不会有外边距合并的问题*/
+    margin-top: 50px;
+}
+
+.course h2 {
+    height: 48px;
+    background-color: aqua;
+    color: #fff;
+    /*水平居中*/
+    text-align: center;
+    /*垂直居中
+   在为48px的行距中垂直居中
+   */
+    line-height: 48px;
+    font-size: 18px;
+}
+
+.bd {
+    padding: 0 20px;
+}
+
+.course .bd ul li {
+    padding: 12px 0;
+    border-bottom: #ccc solid 1px;
+}
+
+.course .bd ul li a {
+    color: #4e4e4e;
+    font-size: 16px;
+}
+
+.course .bd ul li span {
+    color: #a5a5a5;
+    font-size: 12px;
+}
+
+.course .bd a {
+    height: 40px;
+    color: #000;
+    font-size: 18px;
+}
+
+
+/*第三部分*/
+
+.rem {
+    height: 60px;
+    background-color: #fff;
+    /**阴影处理*/
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    line-height: 64px;
+    /*这里的行高会继承给孩子*/
+    margin-left: 48px;
+    margin-top: 10px;
+}
+
+.rem h3 {
+    float: left;
+    text-align: center;
+    margin-left: 30px;
+    color: #00a4ff;
+}
+
+.rem ul {
+    float: left;
+    margin-left: 30px;
+}
+
+.rem ul li {
+    float: left;
+}
+
+.rem ul li a {
+    padding: 0 30px;
+    font-size: 16px;
+    border-left: 1px solid #00a4ff;
+}
+
+
+/*且这个不能用.rem a表示*/
+
+.mod {
+    /*如果说把这个链接a变为块级元素 为一个块其边框高度和夫块一样*/
+    float: right;
+    margin-right: 30px;
+}
+
+
+/*第四部分*/
+
+.part4 {
+    margin-left: 48px;
+    margin-top: 35px;
+}
+
+.part4 h2 {
+    float: left;
+}
+
+.part4 a {
+    display: block;
+    float: right;
+}
+
+.box-bd {}

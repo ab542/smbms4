@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--需要引入css样式 才可以在HTML里面使用css里面的类和id（样式）-->
+    <link rel="stylesheet" href="../static/css/css.css">
+    <link type="text/css" rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <script src="../static/js/jquery-3.5.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--头部 第一行-->
+    <div class="header w">
+        <!--第一行  每个盒子根据自己所处的位置命名-->
+
+        <div class="logo">
+            <!--logo 实际为图片---第一列-->
+        </div>
+        <div class="nav">
+            <!--第二列  导航栏-->
+            <ul>
+                <!--怎样将多个列的盒子在一行显示？
+                    如果不添加浮动 对于一个div来说自=自动占一行
+                    就算设置了第一列div的宽和高 第二列div也会自动换行
+                     第二列的div会自动换行在第二行显示
+
+                利用浮动 float：left
+                对于同一行的多个列 一个孩子浮动那么全部孩子都要浮动
+                -->
+                <!--li为块级元素 块级元素从上往下排列 且每个块级元素之间自动换行
+                -->
+                <li><a href="#">首页</a></li>
+                <li><a href="#">宠秀</a></li>
+                <li><a href="#">AI宠物识别</a></li>
+                <li><a href="#">个人中心</a></li>
+            </ul>
+        </div>
+
+        <!--
+        <div class="search">
+            -表单属于行内块元素
+                两个行内块元素之间是有空隙的
+
+                怎么解决？
+                简单：加浮动 浮动两个块之间是没有空隙的
+            
+                <input type="text" value="请输入关键词"> 
+               <button></button>
+           
+        </div>-->
+        <div class="user">
+            <img src="../static/img/user.png" alt=""> 获取名字
+            <a href="">退出登录</a>
+        </div>
+
+    </div>
+
+    <!--中间-->
+    <div class="banner">
+        <div class="w">
+            <div class="ull">
+                <ul>
+                    <li><a href="#">宠窝<span>></span></a></li>
+                    <li><a href="#">云养基地<span>></span></a></li>
+                    <li><a href="#">我的云养<span>></span></a></li>
+                    <li><a href="#">领养论坛中心<span>></span></a></li>
+                    <li><a href="#">寄养论坛中心<span>></span></a></li>
+                    <li><a href="#">寻宠启示<span>></span></a></li>
+                    <li><a href="#">意见反馈<span>></span></a></li>
+                    <li><a href="#">帮助与服务<span>></span></a></li>
+                    <li><a href="#">关于我们<span>></span></a></li>
+
+                </ul>
+            </div>
+
+
+            <!--宠物档案-->
+            <div class="course">
+                <h2>我的宠物档案</h2>
+                <div class="bd">
+
+                    <ul>
+                        <li><a href="#">大白白</a><br><span>获取宠物年龄</span></li>
+                        <li><a href="#">千岁岁</a><br><span>获取宠物年龄</span></li>
+                        <li><a href="#">等等等</a><br><span>获取宠物年龄</span></li>
+                    </ul>
+                    <a href="#">全部课程</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--第三部分-->
+    <div class="rem">
+
+        <h3>精品推荐</h3>
+        <ul>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">jQuery</a></li>
+        </ul>
+        <a href="#" class="mod">修改兴趣</a>
+    </div>
+    <!--第四部分-->
+    <div class="part4">
+
+        <h2>精品推荐</h2>
+        <a href="#">查看全部</a>
+    </div>
+    <!--第五部分-->
+    <div class="box-bd">
+
+    </div>
+</body>
+
+</html>

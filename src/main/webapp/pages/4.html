@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>非模块化方式使用layui</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../static/js/jquery-3.5.1.js"></script>
+    <script src="../layui/layui.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        div.gallery {
+            border: 1px solid #ccc;
+        }
+        
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+        
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+        
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+        }
+        
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+        
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 你的HTML代码 -->
+
+
+    <!-- 第二步：建立视图。用于呈现渲染结果。 -->
+
+    <div id="view1"></div>
+
+
+</body>
+<!-- //第一步：编写模版。你可以使用一个script标签存放模板，如： -->
+
+<script id="demo1" type="text/html">
+    {{# layui.each(d.list1, function(index, item){ }}
+    <div class="responsive" id="one">
+        <div class="gallery">
+            <a target="_blank" href="#">
+                <img src="../static/img/cat.jpg" alt="萌猫 " width="600" height="400">
+            </a>
+            <div class="desc">
+                <textarea class="form-control" row="3" col="5">{{item.modename1}}</textarea>
+                <i class="layui-icon layui-icon-heart-fill"></i>{{item.good}}
+                <i class="layui-icon layui-icon-reply-fill"></i>{{item.pin}}{{item.fa}}
+            </div>
+        </div>
+    </div>
+    {{# }); }} {{# if(d.list1.length === 0){ }} 无数据 {{# } }}
+</script>
+
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;
+    ! function() {
+        var layer = layui.layer,
+            form = layui.form,
+            laytpl = layui.laytpl;
+
+        layer.msg('Hello World');
+
+
+
+
+        //第三步：渲染模版
+        var data = { //数据
+
+            "list1": [{
+                "modename1": "图片描述",
+                "good": "23",
+                "pin": "89",
+                "fa": "发布者"
+            }, {
+                "modename1": "好",
+                "good": "90",
+                "pin": "12",
+                "fa": "李盈"
+            }]
+        }
+
+
+
+        //demo1
+        var getTpl1 = demo1.innerHTML,
+            view1 = document.getElementById("view1");
+        laytpl(getTpl1).render(data, function(html) {
+            view1.innerHTML = html;
+        })
+
+
+    }();
+</script>
+
+</html>
